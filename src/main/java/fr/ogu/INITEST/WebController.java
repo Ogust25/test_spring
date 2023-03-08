@@ -16,17 +16,17 @@ public class WebController {
     final ArrayList<Users> test = new ArrayList<>();
 
     @GetMapping("/index")
-    public String index(HttpSession session, Model model){
+    public String index(HttpSession session, Model model) {
 
         // DATE
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateSchema  = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss");
+        SimpleDateFormat dateSchema = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss");
         String time = dateSchema.format(c.getTime());
-        session.setAttribute("time", time );
+        session.setAttribute("time", time);
 
         // USER FORM
         model.addAttribute("users", new Users());
-
+        // makeRequest.checkUrl("test@test.test");
         return "index";
     }
 
