@@ -8,19 +8,19 @@
     <h1 th:text="${session.time}"></h1>
 
     <form action="#" th:action="@{/users}" th:object="${users}" method="post">
-        <label>Nom :
-            <input type="text" th:field="*{name}">
+        <label>Email :
+            <input type="text" th:field="*{email}">
         </label>
         <br>
-        <label>Prénom :
-            <input type="text" th:field="*{lastName}">
+        <label>Confirm email :
+            <input type="text">
         </label>
         <br>
-        <label>Age :
-            <input type="number" th:field="*{age}">
+        <label>Password :
+            <input type="password" th:field="*{password}">
         </label>
         <br>
-        <input type="submit" value="Valider">
+        <input type="submit" value="Submit">
     </form>
 
 </body>

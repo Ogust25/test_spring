@@ -5,13 +5,18 @@
   <title>Title</title>
 </head>
 <body>
-  <p th:text="'Users :'"/>
-
-  <div th:each="user: ${test}">
-    <p th:text="${user.name}"/>
-    <p th:text="${user.lastName}"/>
-    <p th:text="${user.age}"/>
-  </div>
-
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Users</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="user: ${test}">
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.password}"></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>

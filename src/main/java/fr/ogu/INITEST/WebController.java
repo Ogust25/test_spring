@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 
 @Controller
@@ -34,11 +33,9 @@ public class WebController {
     @PostMapping("/users")
     public String userSubmit(@ModelAttribute Users users, Model model) {
         test.add(users);
-        for (Users users1 : test) {
-            System.out.println(users1.getLastName());
-        }
         model.addAttribute("users", users);
         model.addAttribute("test", test);
         return "users";
     }
 }
+
