@@ -8,10 +8,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 @Controller
 public class WebController {
+    final ArrayList<Users> test = new ArrayList<>();
+
     @GetMapping("/index")
     public String index(HttpSession session, Model model){
 
@@ -27,10 +31,14 @@ public class WebController {
         return "index";
     }
 
-    @PostMapping("/index")
+    @PostMapping("/users")
     public String userSubmit(@ModelAttribute Users users, Model model) {
+        test.add(users);
+        for (Users users1 : test) {
+            System.out.println(users1.getLastName());
+        }
         model.addAttribute("users", users);
-
-        return "index";
+        model.addAttribute("test", test);
+        return "users";
     }
 }
